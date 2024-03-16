@@ -1,10 +1,8 @@
 import random
 
 print('Bem vindo a Batalha Pokemon!')
-print('[1] Charmander')
-print('[2] Squirtle')
-print('[3] Bulbasaur')
-pokemon = int(input('Escolha seu pokemon: '))
+print('Escolha seu pokemon: [1] Charmander [2] Squirtle [3] Bulbasaur')
+pokemon = int(input(' '))
 
 vida = 0
 danoAtaque = 0

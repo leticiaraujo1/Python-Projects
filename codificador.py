@@ -1,50 +1,46 @@
-print('---Bem vindo ao Codificador Python---')
+print('---Codificador Python---')
 
 def caesar():
     shift = int(input('Diga o número de vezes que o texto será deslocado: '))
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    newText = ''
+    new_text = ''
     
     for char in text:
         if char == ' ':
-            newText += char
+            new_text += char
         else:
             index = int(alphabet.find(char))
-            newIndex = (index + shift) % 26
-            newText += alphabet[newIndex]
+            new_index = (index + shift) % 26
+            new_text += alphabet[new_index]
     
-    print('Texto codificado:', newText)
+    print('Texto codificado:', new_text)
 
 def vigenere():
-    customKey = input('Diga qual chave será utilizada: ')
-    keyIndex = 0
+    custom_key = input('Diga qual chave será utilizada: ')
+    key_index = 0
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    newText = ''
+    new_text = ''
 
     for char in text.lower():
         if char == ' ':
-            newText += char
+            new_text += char
         else:
-            keyChar = customKey[keyIndex % len(customKey)]
-            keyIndex += 1
-            offset = alphabet.index(keyChar)
+            key_char = custom_key[key_index % len(custom_key)]
+            key_index += 1
+            offset = alphabet.index(key_char)
             index = alphabet.find(char)
             newIndex = (index + offset) % len(alphabet)
-            newText += alphabet[newIndex]
+            new_text += alphabet[newIndex]
     
-    print('Texto codificado:', newText)
+    print('Texto codificado:', new_text)
 
 
 while True:
-    print('---O que você deseja?---')
-    print('[1] Codificar')
-    print('[2] Sair')
-    opcao = input('')
+    print('O que você deseja? [1] Codificar [2] Sair')
+    choice = input('')
     
-    if opcao == '1':
-        print('Qual codificação você deseja utilizar?')
-        print('[1] Cifra de cesar')
-        print('[2] Cifra de Vigenere')
+    if choice == '1':
+        print('Qual codificação você deseja utilizar? [1] Cifra de César [2] Cifra de Vigenere')
         cod = input('')
         text = input('Digite o texto a ser codificado: ').lower()
         
